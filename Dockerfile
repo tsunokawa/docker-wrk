@@ -7,7 +7,9 @@ RUN apt-get update && apt-get -y upgrade && \
 RUN git clone https://github.com/wg/wrk.git && \
     cd wrk && \
     make && \
-    mv wrk /usr/local/bin/
+    mv wrk /usr/local/bin/ && \
+    cd .. && \
+    rm -rf wrk
 
 CMD ["wrk"]
 
